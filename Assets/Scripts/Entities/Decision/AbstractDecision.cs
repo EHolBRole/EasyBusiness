@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Entities
 {
-    public abstract class AbstractUpdate
+    public abstract class AbstractDecision
     {
 
         private string _name;
@@ -12,7 +12,7 @@ namespace Entities
         protected int _addedPopularity;
         protected int _cost;
 
-        public AbstractUpdate(string name, int addedIncome, int addedOutlay, int addedPopularity, int cost)
+        public AbstractDecision(string name, int addedIncome, int addedOutlay, int addedPopularity, int cost)
         {
             _name = name;
             _addedIncome = addedIncome;
