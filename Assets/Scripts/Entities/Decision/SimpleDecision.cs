@@ -4,13 +4,13 @@ using UnityEngine;
 
 namespace Entities
 {
-    public class SpecialUpdate : AbstractUpdate
+    public class SimpleDecision : AbstractDecision
     {
 
-        public SpecialUpdate(string name, int addedIncome, int addedOutlay, int addedPopularity, int cost)
+        public SimpleDecision(string name, int addedIncome, int addedOutlay, int addedPopularity, int cost)
         : base(name, addedIncome, addedOutlay, addedPopularity, cost)
         {
-
+            
         }
     }
 }
