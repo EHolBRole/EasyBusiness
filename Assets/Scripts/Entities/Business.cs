@@ -5,22 +5,10 @@ namespace Entities
 {
     public class Business
     {
-
         private List<AbstractDecision> _avaiableDecisionsList = new List<AbstractDecision>();
 
-        public string Name { get; private set; }
-
-        public int Income { get; private set; }
-        public int Outlay { get; private set; }
-        public int Popularity { get; private set; }
-        public int StartBalance { get; private set; }
-
-        public BusinessTier Tier { get; private set; }
-
-        public Sprite BusinessSprite { get; private set; }
-
-
-        public Business(string name, int income, int outlay, int popularity, int startBalance, Sprite businessSprite, BusinessTier tier, List<AbstractDecision> avaiableDecisions)
+        public Business(string name, int income, int outlay, int popularity, 
+            int startBalance, Sprite businessSprite, BusinessTier tier)
         {
             Name = name;
             Income = income;
@@ -29,8 +17,21 @@ namespace Entities
             StartBalance = startBalance;
             BusinessSprite = businessSprite;
             Tier = tier;
-            _avaiableDecisionsList.AddRange(avaiableDecisions);
         }
+
+        public string Name { get; private set; }
+
+        public int Income { get; private set; }
+        
+        public int Outlay { get; private set; }
+        
+        public int Popularity { get; private set; }
+        
+        public int StartBalance { get; private set; }
+        
+        public BusinessTier Tier { get; private set; }
+        
+        public Sprite BusinessSprite { get; private set; }
 
         public string ShowAllAvaiableDecisions()
         {
