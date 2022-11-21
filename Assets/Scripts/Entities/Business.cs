@@ -44,20 +44,29 @@ namespace Entities
             return allDecisionsString;
         }
 
+        public void AddNewDecisionToAvaiableDecisionsList(AbstractDecision decision)
+        {
+            _avaiableDecisionsList.Add(decision);
+            Debug.Log($"Added New Decision to {Name} Business list");
+        }
+
         public void ChangeIncome(int income)
         {
-            Debug.Log($"Income of Business: {Name} has changed");
             Income += income;
+            Debug.Log($"Income of Business: {Name} has changed");
         }
+
         public void ChangeOutlay(int outlay)
         {
-            Debug.Log($"Outlay of Business: {Name} has changed");
             Outlay += outlay;
+            Debug.Log($"Outlay of Business: {Name} has changed");
+
         }
+        
         public void ChangePopularity(int popularity)
         {
-            Debug.Log($"Popularity of Business: {Name} has changed");
             Popularity += popularity;
+            Debug.Log($"Popularity of Business: {Name} has changed");
         }
 
         public override string ToString()
