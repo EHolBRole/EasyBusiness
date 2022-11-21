@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BusinessChoiseContinueButton : MonoBehaviour
@@ -14,4 +12,5 @@ public class BusinessChoiseContinueButton : MonoBehaviour
         _businessChoisePanelGO.SetActive(false);
         Debug.Log("Player chosed his business");
     }
+
 }
