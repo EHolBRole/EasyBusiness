@@ -4,21 +4,28 @@ namespace Entities
 {
     public abstract class AbstractDecision
     {
+        private Business.BusinessTier _decisionTier;
 
-        private string _name;
+        public string Name { get; private set; }
 
-        protected int _addedIncome;
-        protected int _addedOutlay;
-        protected int _addedPopularity;
-        protected int _cost;
+        public int AddedIncome { get; protected set; }
+        public int AddedOutlay { get; protected set; }
+        public int AddedPopularity { get; protected set; }
+        public int Cost { get; protected set; }
 
-        public AbstractDecision(string name, int addedIncome, int addedOutlay, int addedPopularity, int cost)
+        public AbstractDecision(string name, int addedIncome, int addedOutlay, int addedPopularity, int cost, Business.BusinessTier decisionTier)
         {
-            _name = name;
-            _addedIncome = addedIncome;
-            _addedOutlay = addedOutlay;
-            _addedPopularity = addedPopularity;
-            _cost = cost;
+            Name = name;
+            AddedIncome = addedIncome;
+            AddedOutlay = addedOutlay;
+            AddedPopularity = addedPopularity;
+            Cost = cost;
+            _decisionTier = decisionTier;
+        }
+
+        public override string ToString()
+        {
+            return $"{Name} - Cost: {Cost}";
         }
     }
 }
