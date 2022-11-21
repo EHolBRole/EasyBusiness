@@ -8,4 +8,8 @@ public class InitializationManager : MonoBehaviour
     {
         DecisionLib.InitBusinessAvaiableDecisionsLists();
     }
+    private void Start()
+    {
+        BusinessLib.choisedBusiness = BusinessLib.smallCafe;
+    }
 }
