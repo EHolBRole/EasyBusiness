@@ -6,7 +6,7 @@ namespace Entities
     public class Business
     {
 
-        private List<AbstractDecision> _avaiableDecisions = new List<AbstractDecision>();
+        private List<AbstractDecision> _avaiableDecisionsList = new List<AbstractDecision>();
 
         public string Name { get; private set; }
 
@@ -29,14 +29,14 @@ namespace Entities
             StartBalance = startBalance;
             BusinessSprite = businessSprite;
             Tier = tier;
-            _avaiableDecisions.AddRange(avaiableDecisions);
+            _avaiableDecisionsList.AddRange(avaiableDecisions);
         }
 
         public string ShowAllAvaiableDecisions()
         {
             string allDecisionsString = "";
 
-            foreach (var decision in _avaiableDecisions)
+            foreach (var decision in _avaiableDecisionsList)
             {
                 allDecisionsString += decision.ToString() + "\n";
             }
