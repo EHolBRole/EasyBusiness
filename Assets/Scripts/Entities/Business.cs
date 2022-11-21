@@ -6,7 +6,7 @@ namespace Entities
     public class Business
     {
 
-        private List<AbstractDecision> _avaiableDecisions = new List<AbstractDecision>();
+        private List<AbstractDecision> _avaiableDecisionsList = new List<AbstractDecision>();
 
         public string Name { get; private set; }
 
@@ -29,20 +29,46 @@ namespace Entities
             StartBalance = startBalance;
             BusinessSprite = businessSprite;
             Tier = tier;
-            _avaiableDecisions.AddRange(avaiableDecisions);
+            _avaiableDecisionsList.AddRange(avaiableDecisions);
         }
 
         public string ShowAllAvaiableDecisions()
         {
             string allDecisionsString = "";
 
-            foreach (var decision in _avaiableDecisions)
+            foreach (var decision in _avaiableDecisionsList)
             {
                 allDecisionsString += decision.ToString() + "\n";
             }
 
             return allDecisionsString;
         }
+
+        public void AddNewDecisionToAvaiableDecisionsList(AbstractDecision decision)
+        {
+            _avaiableDecisionsList.Add(decision);
+            Debug.Log($"Added New Decision to {Name} Business list");
+        }
+
+        public void ChangeIncome(int income)
+        {
+            Income += income;
+            Debug.Log($"Income of Business: {Name} has changed");
+        }
+
+        public void ChangeOutlay(int outlay)
+        {
+            Outlay += outlay;
+            Debug.Log($"Outlay of Business: {Name} has changed");
+
+        }
+        
+        public void ChangePopularity(int popularity)
+        {
+            Popularity += popularity;
+            Debug.Log($"Popularity of Business: {Name} has changed");
+        }
+
         public override string ToString()
         {
             return $"Your business name: {Name} \n" +
