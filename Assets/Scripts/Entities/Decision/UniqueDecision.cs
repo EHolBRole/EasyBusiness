@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Entities
@@ -8,13 +6,35 @@ namespace Entities
 
     public class UniqueDecision : AbstractDecision
     {
-        public DecisionAction uniqueDecisionAction;
-        public UniqueDecision(string name, int addedIncome, int addedOutlay, int addedPopularity, int cost, DecisionAction uniqueDecisionAction, Business.BusinessTier decisionTier, int level = 0)
+        private DecisionAction _uniqueDecisionAction;
+        public UniqueDecision(string name, int addedIncome, int addedOutlay, int addedPopularity, int cost, 
+            DecisionAction uniqueDecisionAction, Business.BusinessTier decisionTier, 
+            int level = 0, bool isDecisionDone = false)
         : base(name, addedIncome, addedOutlay, addedPopularity, cost, decisionTier, level)
         {
-            this.uniqueDecisionAction = uniqueDecisionAction;
+            _uniqueDecisionAction = uniqueDecisionAction;
+            IsDecisionDone = isDecisionDone;
         }
 
-        public Business DoUniqueDecisionAction(ref Business business) => uniqueDecisionAction.Invoke(ref business);
+        public bool IsDecisionDone { get; private set; }
+
+        public override void DoDecision(ref Business business)
+        {
+            if (IsDecisionDone)
+            {
+                Debug.Log("Decision already made!");
+            }
+            base.DoDecision(ref business);
+            _uniqueDecisionAction.Invoke(ref business);
+            IsDecisionDone = true;
+        }
+
+        public Business DoUniqueDecisionAction(ref Business business) => _uniqueDecisionAction.Invoke(ref business);
+
+        public override string ToString()
+        {
+            return $"{Name} - Cost: {Cost} | level: Special";
+        }
+
     }
 }
