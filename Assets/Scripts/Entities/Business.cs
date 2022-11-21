@@ -20,7 +20,7 @@ namespace Entities
         public Sprite BusinessSprite { get; private set; }
 
 
-        public Business(string name, int income, int outlay, int popularity, int startBalance, Sprite businessSprite, BusinessTier tier, List<AbstractDecision> avaiableDecisions)
+        public Business(string name, int income, int outlay, int popularity, int startBalance, Sprite businessSprite, BusinessTier tier)
         {
             Name = name;
             Income = income;
@@ -29,7 +29,6 @@ namespace Entities
             StartBalance = startBalance;
             BusinessSprite = businessSprite;
             Tier = tier;
-            _avaiableDecisionsList.AddRange(avaiableDecisions);
         }
 
         public string ShowAllAvaiableDecisions()
