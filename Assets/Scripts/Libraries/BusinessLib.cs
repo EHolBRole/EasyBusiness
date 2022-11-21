@@ -13,5 +13,6 @@ namespace Libraries
         // Create other Cafe-Root businesses
 
         public static List<Business> allBusinessList = new List<Business>() { smallCafe, smallSushiRestaraunt, burgerFoodCourt};
+
     }
 }

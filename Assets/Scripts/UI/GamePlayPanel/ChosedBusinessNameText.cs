@@ -10,4 +10,5 @@ public class ChosedBusinessNameText : MonoBehaviour
     {
         chosedBusinessNameText.text = BusinessLib.choisedBusiness.Name;
     }
+
 }
