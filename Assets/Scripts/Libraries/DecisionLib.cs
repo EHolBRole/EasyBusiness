@@ -1,18 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using Entities;
 
-public class DecisionLib : MonoBehaviour
+namespace Libraries
 {
-    // Start is called before the first frame update
-    void Start()
+    class DecisionLib
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        // This is a library for all our Decision Object
+        // Could try to create a few examples of Decisions & try to realize feature with auto-adding Decisions to Business lists of 
+        // avaiable decisions;
     }
 }

@@ -43,6 +43,23 @@ namespace Entities
 
             return allDecisionsString;
         }
+
+        public void ChangeIncome(int income)
+        {
+            Debug.Log($"Income of Business: {Name} has changed");
+            Income += income;
+        }
+        public void ChangeOutlay(int outlay)
+        {
+            Debug.Log($"Outlay of Business: {Name} has changed");
+            Outlay += outlay;
+        }
+        public void ChangePopularity(int popularity)
+        {
+            Debug.Log($"Popularity of Business: {Name} has changed");
+            Popularity += popularity;
+        }
+
         public override string ToString()
         {
             return $"Your business name: {Name} \n" +
