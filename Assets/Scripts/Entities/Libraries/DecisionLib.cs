@@ -11,18 +11,16 @@ namespace Libraries
         private static SimpleDecision testDecision = new SimpleDecision("Test name", 50, 10, 3, 50, Business.BusinessTier.BaseTier);
         private static SimpleDecision testDecision2 = new SimpleDecision("Test name 2", 100, -25, 8, 125, Business.BusinessTier.FirstTier);
 
-        public static List<AbstractDecision> allSimpleDecisionsList = new List<AbstractDecision>() { testDecision, testDecision2 };
+        public static List<SimpleDecision> allSimpleDecisionsList = new List<SimpleDecision>() { testDecision, testDecision2 };
 
         public static void InitBusinessAvaiableDecisionsLists()
         {
-            foreach (Business business in BusinessLib.allBusinessList) // Think about algorythm. Too inefficient. 
+            foreach (SimpleDecision decision in allSimpleDecisionsList)
             {
-                foreach(SimpleDecision decision in allSimpleDecisionsList)
+                switch (decision.DecisionTier)
                 {
-                    if (decision.DecisionTier == business.Tier)
-                    {
-                        business.AddNewDecisionToAvaiableDecisionsList(decision);
-                    }
+                    case Business.BusinessTier.BaseTier:
+                        break;
                 }
             }
         }

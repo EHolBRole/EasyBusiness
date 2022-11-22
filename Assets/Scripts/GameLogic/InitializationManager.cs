@@ -5,11 +5,12 @@ public class InitializationManager : MonoBehaviour
 {
     private void Awake()
     {
-        DecisionLib.InitBusinessAvaiableDecisionsLists();
+        ItemInit();
     }
 
-    private void Start()
+    private void ItemInit()
     {
+        DecisionLib.InitBusinessAvaiableDecisionsLists();
         BusinessLib.choisedBusiness = BusinessLib.smallCafe;
     }
 
