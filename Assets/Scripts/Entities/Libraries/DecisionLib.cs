@@ -11,7 +11,7 @@ namespace Libraries
         private static SimpleDecision testDecision = new SimpleDecision("Test name", 50, 10, 3, 50, Business.BusinessTier.BaseTier);
         private static SimpleDecision testDecision2 = new SimpleDecision("Test name 2", 100, -25, 8, 125, Business.BusinessTier.FirstTier);
 
-        public static List<SimpleDecision> allSimpleDecisionsList = new List<SimpleDecision>() { testDecision, testDecision2 };
+        public static readonly List<SimpleDecision> allSimpleDecisionsList = new List<SimpleDecision>() { testDecision, testDecision2 };
 
         public static void InitBusinessAvaiableDecisionsLists()
         {
@@ -20,6 +20,7 @@ namespace Libraries
                 switch (decision.DecisionTier)
                 {
                     case Business.BusinessTier.BaseTier:
+
                         break;
                 }
             }

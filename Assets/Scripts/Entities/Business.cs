@@ -5,10 +5,13 @@ namespace Entities
 {
     public class Business
     {
+        public List<Business> nextTierBusinessList = new List<Business>(); // Restruct All System with Business and it's Tiers. Need to make better Architecture
+        
+
         private List<AbstractDecision> _avaiableDecisionsList = new List<AbstractDecision>();
 
         public Business(string name, int income, int outlay, int popularity, 
-            int startBalance, Sprite businessSprite, BusinessTier tier)
+            int startBalance, Sprite businessSprite, BusinessTier tier, List<Business> businesses) 
         {
             Name = name;
             Income = income;
@@ -17,6 +20,7 @@ namespace Entities
             StartBalance = startBalance;
             BusinessSprite = businessSprite;
             Tier = tier;
+            nextTierBusinessList.AddRange(businesses);
         }
 
         public string Name { get; private set; }
@@ -45,7 +49,7 @@ namespace Entities
             return allDecisionsString;
         }
 
-        public void AddNewDecisionToAvaiableDecisionsList(AbstractDecision decision)
+        public void AddDecisionToAvaiableDecisionsList(AbstractDecision decision)
         {
             _avaiableDecisionsList.Add(decision);
             Debug.Log($"Added New Decision to {Name} Business list");
