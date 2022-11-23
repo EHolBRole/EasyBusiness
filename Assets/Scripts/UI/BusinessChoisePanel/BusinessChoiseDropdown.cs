@@ -6,23 +6,30 @@ using TMPro;
 
 public class BusinessChoiseDropdown : MonoBehaviour
 {
-    public List<string> optionList = new List<string>();
+    private static TMP_Dropdown _dropdown;
+
+    private List<string> _optionList = new List<string>();
+    
     private void Awake()
     {
+        _dropdown = this.GetComponent<TMP_Dropdown>();
+
         foreach(Business business in BusinessLib.baseTierBusinesList)
         {
-            optionList.Add(business.Name);
+            _optionList.Add(business.Name);
         }
-        this.GetComponent<TMP_Dropdown>().AddOptions(optionList);
+
+        _dropdown.AddOptions(_optionList);
     }
-    private void FixedUpdate()
+
+    public static Business TellChosedBusiness()
     {
-        
+        return BusinessLib.baseTierBusinesList[_dropdown.value];
     }
+
     public void OnValueChange()
     {
-        Debug.Log("Choised Business has changed: " + BusinessLib.baseTierBusinesList[this.GetComponent<TMP_Dropdown>().value].Name);
-        BusinessLib.choisedBusiness = BusinessLib.baseTierBusinesList[this.GetComponent<TMP_Dropdown>().value];
+        Debug.Log("Choised Business has changed: " + BusinessLib.baseTierBusinesList[_dropdown.value].Name);
     }
 
 }

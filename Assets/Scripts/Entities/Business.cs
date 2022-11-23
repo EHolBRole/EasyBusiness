@@ -5,10 +5,10 @@ namespace Entities
 {
     public class Business
     {
-        public List<Business> nextTierBusinessList = new List<Business>(); // Restruct All System with Business and it's Tiers. Need to make better Architecture
-        
-
         private List<AbstractDecision> _avaiableDecisionsList = new List<AbstractDecision>();
+
+        public List<Business> nextTierBusinessList = new List<Business>(); // Restruct All System with Business and it's Tiers. Need to make better Architecture
+        // Maybe it's good decision to use Abstract Fabric pattern here. Need to think of it.
 
         public Business(string name, int income, int outlay, int popularity, 
             int startBalance, Sprite businessSprite, BusinessTier tier, List<Business> businesses) 

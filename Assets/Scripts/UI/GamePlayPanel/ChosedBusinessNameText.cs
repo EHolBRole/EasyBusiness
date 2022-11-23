@@ -8,7 +8,8 @@ public class ChosedBusinessNameText : MonoBehaviour
     private TMP_Text chosedBusinessNameText;
     private void FixedUpdate()
     {
-        chosedBusinessNameText.text = BusinessLib.choisedBusiness.Name;
+        chosedBusinessNameText.text = UsersBusinessManager.choisedBusiness.Name;
     }
+
 
 }

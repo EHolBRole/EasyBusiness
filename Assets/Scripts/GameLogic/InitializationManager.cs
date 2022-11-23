@@ -11,7 +11,6 @@ public class InitializationManager : MonoBehaviour
     private void ItemInit()
     {
         DecisionLib.InitBusinessAvaiableDecisionsLists();
-        BusinessLib.choisedBusiness = BusinessLib.smallCafe;
     }
 
 }
