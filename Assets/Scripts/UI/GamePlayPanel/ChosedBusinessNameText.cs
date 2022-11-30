@@ -2,14 +2,18 @@ using UnityEngine;
 using Libraries;
 using TMPro;
 
-public class ChosedBusinessNameText : MonoBehaviour
+namespace UI
 {
-    [SerializeField]
-    private TMP_Text chosedBusinessNameText;
-    private void FixedUpdate()
+    public class ChosedBusinessNameText : MonoBehaviour
     {
-        chosedBusinessNameText.text = UsersBusinessManager.choisedBusiness.Name;
-    }
+        [SerializeField]
+        private TMP_Text chosedBusinessNameText;
 
+        public void ChangeText() // Think about realization. Totaly shouldn't be put in every Frame proceding. 
+        {
+            chosedBusinessNameText.text = UsersBusinessManager.ChoisedBusiness.Name;
+            Debug.Log("Name of business text has been changed.");
+        }
+    }
 
 }

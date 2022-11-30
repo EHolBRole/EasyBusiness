@@ -1,16 +1,19 @@
 using UnityEngine;
 
-public class BusinessChoiseContinueButton : MonoBehaviour
+namespace UI
 {
-    [SerializeField]
-    private GameObject _businessChoisePanelGO;
-    [SerializeField]
-    private GameObject _gameplayPanelGO;
-    public void OnClick()
+    public class BusinessChoiseContinueButton : MonoBehaviour
     {
-        _gameplayPanelGO.SetActive(true);
-        _businessChoisePanelGO.SetActive(false);
-        Debug.Log("Player chosed his business");
-    }
+        [SerializeField]
+        private GameObject _businessChoisePanelGO;
+        [SerializeField]
+        private GameObject _gameplayPanelGO;
+        public void OnClick()
+        {
+            _gameplayPanelGO.SetActive(true);
+            _businessChoisePanelGO.SetActive(false);
+            Debug.Log("Player chosed his business");
+        }
 
+    }
 }

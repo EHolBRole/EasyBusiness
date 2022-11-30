@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MonthManager : MonoBehaviour
@@ -15,7 +13,15 @@ public class MonthManager : MonoBehaviour
 
     public void MoveToNextMonth()
     {
-        Debug.Log("New Month begins");
-        monthCounter++;
+        if (monthCounter < MONTH_LIMIT)
+        {
+            UsersBusinessManager.ChoisedBusiness.ProceedNetworth();
+            monthCounter++;
+            Debug.Log("New Month begins");
+        }
+        else
+        {
+            // Game Over;
+        }
     }
 }

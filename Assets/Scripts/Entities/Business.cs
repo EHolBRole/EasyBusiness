@@ -74,6 +74,8 @@ namespace Entities
             Debug.Log($"Popularity of Business: {Name} has changed");
         }
 
+        public int ProceedNetworth() => Income - Outlay;
+        
         public override string ToString()
         {
             return $"Your business name: {Name} \n" +

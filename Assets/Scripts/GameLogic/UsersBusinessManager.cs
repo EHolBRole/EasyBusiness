@@ -1,12 +1,26 @@
 using UnityEngine;
+using UI;
 using Entities;
 public class UsersBusinessManager : MonoBehaviour
 {
-    public static Business choisedBusiness;
+    private static Business _choisedBusiness;
+
+    public static Business ChoisedBusiness
+    { 
+        get
+        {
+            return _choisedBusiness;
+        }
+        set
+        { 
+            _choisedBusiness = value;
+            UIController.businessUIHandler.Invoke();
+        } 
+    }
 
     private void Awake()
     {
-        choisedBusiness = BusinessChoiseDropdown.TellChosedBusiness();
+        ChoisedBusiness = BusinessChoiseDropdown.TellChosedBusiness();
     }
 
 }

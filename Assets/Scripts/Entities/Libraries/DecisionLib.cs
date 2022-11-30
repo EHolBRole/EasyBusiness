@@ -13,18 +13,18 @@ namespace Libraries
 
         public static readonly List<SimpleDecision> allSimpleDecisionsList = new List<SimpleDecision>() { testDecision, testDecision2 };
 
-        public static void InitBusinessAvaiableDecisionsLists()
-        {
-            foreach (SimpleDecision decision in allSimpleDecisionsList)
-            {
-                switch (decision.DecisionTier)
-                {
-                    case Business.BusinessTier.BaseTier:
+        //public static void InitBusinessAvaiableDecisionsLists()
+        //{
+        //    foreach (SimpleDecision decision in allSimpleDecisionsList)
+        //    {
+        //        switch (decision.DecisionTier)
+        //        {
+        //            case Business.BusinessTier.BaseTier:
 
-                        break;
-                }
-            }
-        }
+        //                break;
+        //        }
+        //    }
+        //}
 
     }
 }
