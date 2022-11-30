@@ -30,7 +30,7 @@ namespace Entities
         
         public int Level { get; protected set; }
         
-        public virtual void DoDecision(ref Business business)
+        public virtual void ApplyDecision(ref Business business)
         {
             business.ChangeIncome(AddedIncome);
             business.ChangeOutlay(AddedOutlay);

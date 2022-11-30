@@ -18,13 +18,13 @@ namespace Entities
 
         public bool IsDecisionDone { get; private set; }
 
-        public override void DoDecision(ref Business business)
+        public override void ApplyDecision(ref Business business)
         {
             if (IsDecisionDone)
             {
                 Debug.Log("Decision already made!");
             }
-            base.DoDecision(ref business);
+            base.ApplyDecision(ref business);
             _uniqueDecisionAction.Invoke(ref business);
             IsDecisionDone = true;
         }

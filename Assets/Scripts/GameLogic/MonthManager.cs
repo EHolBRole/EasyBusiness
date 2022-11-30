@@ -1,4 +1,5 @@
 using UnityEngine;
+using Entities;
 
 public class MonthManager : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class MonthManager : MonoBehaviour
     {
         if (monthCounter < MONTH_LIMIT)
         {
+            DecisionManager.DoDecision(Business bus = new Business()); // fix That shit
             UsersBusinessManager.ChoisedBusiness.ProceedNetworth();
             monthCounter++;
             Debug.Log("New Month begins");
