@@ -6,12 +6,12 @@ public class DecisionManager : MonoBehaviour
 {
     private static AbstractDecision _choosedDecision;
 
-    public static void DoDecision(ref Business business)
+    public static void DoDecision(Business business)
     {
         if (UsersBalanceManager.GetUsersBalance() > _choosedDecision.Cost)
         {
             UsersBalanceManager.AddUsersBalance((_choosedDecision.Cost) * -1);
-            _choosedDecision.ApplyDecision(ref business);
+            _choosedDecision.ApplyDecision(business);
         }
     }
 }

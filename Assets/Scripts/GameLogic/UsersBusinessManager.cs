@@ -3,8 +3,9 @@ using UI;
 using Entities;
 public class UsersBusinessManager : MonoBehaviour
 {
-    private static Business _choisedBusiness;
+    private static Business _choisedBusiness; // add factory to create businesses;
 
+    public static UIHandler businessUIHandler;
     public static Business ChoisedBusiness
     { 
         get
@@ -14,7 +15,7 @@ public class UsersBusinessManager : MonoBehaviour
         set
         { 
             _choisedBusiness = value;
-            UIController.businessUIHandler.Invoke();
+            businessUIHandler.Invoke();
         } 
     }
 

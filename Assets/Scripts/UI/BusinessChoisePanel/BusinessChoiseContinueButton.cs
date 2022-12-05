@@ -8,6 +8,7 @@ namespace UI
         private GameObject _businessChoisePanelGO;
         [SerializeField]
         private GameObject _gameplayPanelGO;
+
         public void OnClick()
         {
             _gameplayPanelGO.SetActive(true);

@@ -4,15 +4,10 @@ using UI;
 
 public class InitializationManager : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject gameplayPanelGO;
-
-    private UIController _uicontroller;
+    // Delegate to different classes to initializate every separate scene.
     private void Awake()
     {
-        _uicontroller = gameplayPanelGO.GetComponent<UIController>();
         ItemInit();
-        _uicontroller.InitUI();
     }
 
     private void ItemInit()

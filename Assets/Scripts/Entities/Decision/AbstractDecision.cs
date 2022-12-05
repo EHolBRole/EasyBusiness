@@ -1,7 +1,9 @@
 using UnityEngine;
+using System;
 
 namespace Entities
 {
+    // Add fabrics
     public abstract class AbstractDecision
     {
         public AbstractDecision(string name, int addedIncome, int addedOutlay, int addedPopularity, 
@@ -15,7 +17,6 @@ namespace Entities
             DecisionTier = decisionTier;
             Level = level;
         }
-
         public Business.BusinessTier DecisionTier { get; private set; }
 
         public string Name { get; private set; }
@@ -30,7 +31,7 @@ namespace Entities
         
         public int Level { get; protected set; }
         
-        public virtual void ApplyDecision(ref Business business)
+        public virtual void ApplyDecision(Business business)
         {
             business.ChangeIncome(AddedIncome);
             business.ChangeOutlay(AddedOutlay);

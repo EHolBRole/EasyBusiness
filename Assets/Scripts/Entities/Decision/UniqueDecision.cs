@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Entities
 {
-    public delegate Business DecisionAction(ref Business business);
+    public delegate Business DecisionAction(Business business);
 
     public class UniqueDecision : AbstractDecision
     {
@@ -18,18 +18,18 @@ namespace Entities
 
         public bool IsDecisionDone { get; private set; }
 
-        public override void ApplyDecision(ref Business business)
+        public override void ApplyDecision(Business business)
         {
             if (IsDecisionDone)
             {
                 Debug.Log("Decision already made!");
             }
-            base.ApplyDecision(ref business);
-            _uniqueDecisionAction.Invoke(ref business);
+            base.ApplyDecision(business);
+            _uniqueDecisionAction.Invoke(business);
             IsDecisionDone = true;
         }
 
-        public Business DoUniqueDecisionAction(ref Business business) => _uniqueDecisionAction.Invoke(ref business);
+        public Business DoUniqueDecisionAction(ref Business business) => _uniqueDecisionAction.Invoke(business);
 
         public override string ToString()
         {
