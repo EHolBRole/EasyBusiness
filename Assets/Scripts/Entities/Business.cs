@@ -22,7 +22,9 @@ namespace Entities
             Tier = tier;
             nextTierBusinessList.AddRange(businesses);
         }
+
         public string Name { get; private set; }
+
         public int Income { get; private set; }
         
         public int Outlay { get; private set; }

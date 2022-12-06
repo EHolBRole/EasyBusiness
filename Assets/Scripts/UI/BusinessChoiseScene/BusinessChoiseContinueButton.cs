@@ -11,9 +11,10 @@ namespace UI
 
         public void OnClick()
         {
-            _gameplayPanelGO.SetActive(true);
-            _businessChoisePanelGO.SetActive(false);
+            UsersBusinessManager.ChoisedBusiness = BusinessChoiseDropdown.TellChosedBusiness();
             Debug.Log("Player chosed his business");
+
+            UnityEngine.SceneManagement.SceneManager.LoadScene("GamePlay");
         }
 
     }

@@ -12,7 +12,7 @@ namespace UI
 
         private List<string> _optionList = new List<string>();
 
-        private void Awake()
+        private void Start()
         {
             _dropdown = this.GetComponent<TMP_Dropdown>();
 
@@ -24,10 +24,7 @@ namespace UI
             _dropdown.AddOptions(_optionList);
         }
 
-        public static Business TellChosedBusiness()
-        {
-            return BusinessLib.baseTierBusinesList[_dropdown.value];
-        }
+        public static Business TellChosedBusiness() => BusinessLib.baseTierBusinesList[_dropdown.value];
 
         public void OnValueChange()
         {

@@ -28,7 +28,8 @@ public class UsersBalanceManager : MonoBehaviour
     private void Awake()
     {
         _usersBalance = UsersBusinessManager.ChoisedBusiness.StartBalance;
-        usersBalanceUIHandler.Invoke();
+        Debug.Log("Start Balance Initialized");
+        // usersBalanceUIHandler.Invoke();
     }
 }
     
