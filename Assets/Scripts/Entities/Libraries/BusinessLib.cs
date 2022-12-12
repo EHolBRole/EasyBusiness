@@ -6,6 +6,8 @@ namespace Libraries
     // add Fabrics
     public static class BusinessLib
     {
+        public static Business choisedBusiness = new Business("", 0, 0, 0, 0, null, Business.BusinessTier.BaseTier, new List<Business>());
+
         public static Business smallCafe = new Business("Small Cafe", 600, 200, 5, 1000, null, Business.BusinessTier.BaseTier, new List<Business>() { smallSushiRestaraunt, burgerFoodCourt});
         public static Business testBaseBusiness = new Business("Test Base Business", 666, 228, 69, 7777, null, Business.BusinessTier.BaseTier, new List<Business>());
         public static Business smallSushiRestaraunt = new Business("Small Sushi Restaraunt", 5000, 800, 15, 0, null, Business.BusinessTier.FirstTier, new List<Business>());

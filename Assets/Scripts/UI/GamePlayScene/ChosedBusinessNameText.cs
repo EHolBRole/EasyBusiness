@@ -1,5 +1,4 @@
 using UnityEngine;
-using Libraries;
 using TMPro;
 
 namespace UI
@@ -10,14 +9,12 @@ namespace UI
     /// </summary>
     public class ChosedBusinessNameText : AbstractTextUI
     {
-        [SerializeField]
-        private TMP_Text _chosedBusinessNameText;
 
         public override void ChangeText() // Think about realization. Totaly shouldn't be put in every Frame proceding. 
         {
-            if (_chosedBusinessNameText.text != UsersBusinessManager.ChoisedBusiness.Name)
-                _chosedBusinessNameText.text = UsersBusinessManager.ChoisedBusiness.Name;
-            Debug.Log("Name of business _text has been changed.");
+            if (_textTMP.text != UsersBusinessManager.ChoisedBusiness.Name)
+                _textTMP.text = UsersBusinessManager.ChoisedBusiness.Name;
+            Debug.Log("Name of Player's business has been changed.");
         }
     }
 }

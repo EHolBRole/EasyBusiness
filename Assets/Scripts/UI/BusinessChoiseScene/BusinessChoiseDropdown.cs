@@ -3,6 +3,7 @@ using UnityEngine;
 using Libraries;
 using Entities;
 using TMPro;
+using Libraries;
 
 namespace UI
 {
@@ -22,13 +23,15 @@ namespace UI
             }
 
             _dropdown.AddOptions(_optionList);
-        }
 
-        public static Business TellChosedBusiness() => BusinessLib.baseTierBusinesList[_dropdown.value];
+            BusinessLib.choisedBusiness = BusinessLib.baseTierBusinesList[_dropdown.value];
+        }
 
         public void OnValueChange()
         {
             Debug.Log("Choised Business has changed: " + BusinessLib.baseTierBusinesList[_dropdown.value].Name);
+
+            BusinessLib.choisedBusiness = BusinessLib.baseTierBusinesList[_dropdown.value];
         }
 
     }

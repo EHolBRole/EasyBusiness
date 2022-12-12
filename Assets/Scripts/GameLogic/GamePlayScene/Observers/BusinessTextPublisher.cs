@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Observers 
 {
-    public class ObservableForBusinessText : MonoBehaviour
+    public class BusinessTextPublisher : MonoBehaviour
     {
         [SerializeField]
         private List<GameObject> _BusinessTextObserversGO = new List<GameObject>();
@@ -26,6 +26,7 @@ namespace Observers
             foreach (AbstractTextUI abstractText in businessTextObservers)
             {
                 abstractText.ChangeText();
+                Debug.Log(abstractText.GetText());
             }
         }
 
@@ -35,7 +36,6 @@ namespace Observers
             {
                 AbstractTextUI abstractText = observer.GetComponent<AbstractTextUI>();
                 businessTextObservers.Add(abstractText);
-                Debug.Log(abstractText.ToString());
             }
         }
     }

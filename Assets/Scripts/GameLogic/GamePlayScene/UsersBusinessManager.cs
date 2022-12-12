@@ -1,30 +1,34 @@
-using System.Collections.Generic;
 using UnityEngine;
 using Observers;
 using Entities;
+using Libraries;
 public class UsersBusinessManager : MonoBehaviour
-{
-    private static Business _choisedBusiness = new Business("", 0, 0, 0, 0, null, Business.BusinessTier.BaseTier, new List<Business>()); // add factory to create businesses;
+{// add factory to create businesses;
 
     [SerializeField]
     private GameObject _BusinessTextPublisherGO;
 
-    private ObservableForBusinessText _businessTextPublisher;
+    private static BusinessTextPublisher _businessTextPublisher;
+    
     
     public void Start()
     {
-        _businessTextPublisher = _BusinessTextPublisherGO.GetComponent<ObservableForBusinessText>();
+        _businessTextPublisher = _BusinessTextPublisherGO.GetComponent<BusinessTextPublisher>();
+
+        _businessTextPublisher.NotifyObservers();
     }
 
     public static Business ChoisedBusiness
     { 
         get
         {
-            return _choisedBusiness;
+            return BusinessLib.choisedBusiness;
         }
         set
-        { 
-            _choisedBusiness = value;
-        } 
+        {
+            BusinessLib.choisedBusiness = value;
+
+            _businessTextPublisher.NotifyObservers();
+        }
     }
 }

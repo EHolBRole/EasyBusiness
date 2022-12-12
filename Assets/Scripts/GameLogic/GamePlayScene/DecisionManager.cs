@@ -4,7 +4,7 @@ using UI;
 using Libraries;
 public class DecisionManager : MonoBehaviour
 {
-    private static AbstractDecision _choosedDecision;
+    private static AbstractDecision _choosedDecision = new SimpleDecision("none", 0, 0, 0, 1000, Business.BusinessTier.BaseTier);
 
     public static void DoDecision(Business business)
     {

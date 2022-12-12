@@ -1,18 +1,21 @@
 using UnityEngine;
-using UI;
+using Observers;
 
 // Need to think about this whole script realization. 
 public class UsersBalanceManager : MonoBehaviour 
 {
     private static int _usersBalance;
 
-    public static UIHandler usersBalanceUIHandler; // consider to re-write as event;
-    
+    [SerializeField]
+    private GameObject _usersBalanceTextGO;
+
+    private static AbstractTextUI _usersBalanceTextUI;
+
     public static void AddUsersBalance(int money)
     {
         _usersBalance += money;
 
-        usersBalanceUIHandler.Invoke();
+        _usersBalanceTextUI.ChangeText();
 
         Debug.Log("Users balance has changed!");
     }
@@ -25,11 +28,18 @@ public class UsersBalanceManager : MonoBehaviour
             return _usersBalance;
     }
 
+
+    private void Start()
+    {
+        _usersBalanceTextUI = _usersBalanceTextGO.GetComponent<AbstractTextUI>();
+
+        _usersBalanceTextUI.ChangeText();
+    }
+
     private void Awake()
     {
         _usersBalance = UsersBusinessManager.ChoisedBusiness.StartBalance;
-        Debug.Log("Start Balance Initialized");
-        // usersBalanceUIHandler.Invoke();
+        
     }
 }
     

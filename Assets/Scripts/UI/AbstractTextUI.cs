@@ -6,8 +6,13 @@ using TMPro;
 public abstract class AbstractTextUI : MonoBehaviour
 {
     [SerializeField]
-    private TMP_Text _textTMP;
+    protected TMP_Text _textTMP;
 
     public abstract void ChangeText(); 
+
+    public string GetText()
+    {
+        return _textTMP.text;
+    }
 
 }

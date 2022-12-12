@@ -4,20 +4,30 @@ public class MonthManager : MonoBehaviour
 {
     private const int MONTH_LIMIT = 50;
 
-    private int monthCounter;
+    [SerializeField]
+    private GameObject _monthNumTextGO;
+
+    private AbstractTextUI _monthNumTextUI;
+
+    public static int MonthCounter { get; private set; }
 
     private void Start()
     {
-        monthCounter = 0;
+        MonthCounter = 1;
+
+        _monthNumTextUI = _monthNumTextGO.GetComponent<AbstractTextUI>();
+
+        _monthNumTextUI.ChangeText();
     }
 
     public void MoveToNextMonth()
     {
-        if (monthCounter < MONTH_LIMIT)
+        if (MonthCounter < MONTH_LIMIT)
         {
             DecisionManager.DoDecision(UsersBusinessManager.ChoisedBusiness);
             UsersBusinessManager.ChoisedBusiness.ProceedNetworth();
-            monthCounter++;
+            MonthCounter++;
+            _monthNumTextUI.ChangeText();
             Debug.Log("New Month begins");
         }
         else
