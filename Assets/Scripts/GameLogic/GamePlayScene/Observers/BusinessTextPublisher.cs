@@ -7,23 +7,23 @@ namespace Observers
     public class BusinessTextPublisher : MonoBehaviour
     {
         [SerializeField]
-        private List<GameObject> _BusinessTextObserversGO = new List<GameObject>();
+        private List<GameObject> _BusinessTextObserversGO = new List<GameObject>(); // Maybe use tags to init
+            
+        private List<AbstractTextUI> _businessTextObservers = new List<AbstractTextUI>();    
         
-        private List<AbstractTextUI> businessTextObservers = new List<AbstractTextUI>();
-        
-        public void AddObserver(GameObject obs)
-        {
-            _BusinessTextObserversGO.Add(obs);
-        }
+        //public void AddObserver(GameObject obs)
+        //{
+        //    _BusinessTextObserversGO.Add(obs);
+        //}
 
-        public void RemoveObserver(GameObject obs)
-        {
-            _BusinessTextObserversGO.Remove(obs);
-        }
+        //public void RemoveObserver(GameObject obs)
+        //{
+        //    _BusinessTextObserversGO.Remove(obs);
+        //}
 
         public void NotifyObservers()
         {
-            foreach (AbstractTextUI abstractText in businessTextObservers)
+            foreach (AbstractTextUI abstractText in _businessTextObservers)
             {
                 abstractText.ChangeText();
                 Debug.Log(abstractText.GetText());
@@ -35,7 +35,7 @@ namespace Observers
            foreach (GameObject observer in _BusinessTextObserversGO)
             {
                 AbstractTextUI abstractText = observer.GetComponent<AbstractTextUI>();
-                businessTextObservers.Add(abstractText);
+                _businessTextObservers.Add(abstractText);
             }
         }
     }

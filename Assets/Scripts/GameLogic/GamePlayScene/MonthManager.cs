@@ -2,7 +2,7 @@ using UnityEngine;
 using Entities;
 public class MonthManager : MonoBehaviour
 {
-    private const int MONTH_LIMIT = 50;
+    private const int MONTH_LIMIT = 60;
 
     [SerializeField]
     private GameObject _monthNumTextGO;

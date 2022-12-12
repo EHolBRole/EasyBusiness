@@ -75,7 +75,7 @@ namespace Entities
 
         public int ProceedNetworth() => Income - Outlay;
         
-        public override string ToString()
+        public override string ToString() // Think about it
         {
             return $"Your business name: {Name} \n" +
                 $"Your income: {Income} \n" +

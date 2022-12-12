@@ -6,7 +6,7 @@ public class DecisionManager : MonoBehaviour
 {
     private static AbstractDecision _choosedDecision = new SimpleDecision("none", 0, 0, 0, 1000, Business.BusinessTier.BaseTier);
 
-    public static void DoDecision(Business business)
+    public static void DoDecision(Business business) // Put in Business
     {
         if (UsersBalanceManager.GetUsersBalance() > _choosedDecision.Cost)
         {

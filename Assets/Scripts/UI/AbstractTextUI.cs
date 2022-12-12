@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public abstract class AbstractTextUI : MonoBehaviour
+public abstract class AbstractTextUI : MonoBehaviour // Think, maybe Interface
 {
     [SerializeField]
     protected TMP_Text _textTMP;
