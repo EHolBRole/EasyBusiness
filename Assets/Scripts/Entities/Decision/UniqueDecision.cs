@@ -1,8 +1,7 @@
 using UnityEngine;
 
 namespace Entities
-{
-    
+{    
 
     public class UniqueDecision : AbstractDecision
     {

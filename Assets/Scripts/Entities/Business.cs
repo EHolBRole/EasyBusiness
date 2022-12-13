@@ -11,7 +11,7 @@ namespace Entities
         // Maybe it's good decision to use Abstract Fabric pattern here. Need to think of it.
 
         public Business(string name, int income, int outlay, int popularity, 
-            int startBalance, Sprite businessSprite, BusinessTier tier, List<Business> businesses) 
+            int startBalance, Sprite businessSprite, BusinessTier tier, List<Business> businesses, List<AbstractDecision> abstractDecisionsList) 
         {
             Name = name;
             Income = income;
@@ -21,6 +21,7 @@ namespace Entities
             BusinessSprite = businessSprite;
             Tier = tier;
             nextTierBusinessList.AddRange(businesses);
+            _avaiableDecisionsList.AddRange(abstractDecisionsList);
         }
 
         public string Name { get; private set; }
@@ -48,6 +49,9 @@ namespace Entities
 
             return allDecisionsString;
         }
+
+        public List<AbstractDecision> GetAvaiableDecisionList() => _avaiableDecisionsList;
+
         public void AddDecisionToAvaiableDecisionsList(AbstractDecision decision)
         {
             _avaiableDecisionsList.Add(decision);
@@ -73,8 +77,13 @@ namespace Entities
             Debug.Log($"Popularity of Business: {Name} has changed");
         }
 
-        public int ProceedNetworth() => Income - Outlay;
-        
+        public int ProceedNetworth()
+        {
+            Debug.Log((Income - Outlay));
+            return Income - Outlay;
+        }
+
+
         public override string ToString() // Think about it
         {
             return $"Your business name: {Name} \n" +

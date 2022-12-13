@@ -14,5 +14,6 @@ public class UsersBalanceText : AbstractTextUI
     {
         _usersBalanceText.text = UsersBalanceManager.GetUsersBalance().ToString();
         Debug.Log("Users balance has been changed.");
+        Debug.Log(UsersBalanceManager.GetUsersBalance());
     }
 }

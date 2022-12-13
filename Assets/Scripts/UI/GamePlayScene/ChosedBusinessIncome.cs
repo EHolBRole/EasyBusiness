@@ -8,6 +8,6 @@ public class ChosedBusinessIncome : AbstractTextUI
     {
         if (_textTMP.text != UsersBusinessManager.ChoisedBusiness.Income.ToString())
             _textTMP.text = UsersBusinessManager.ChoisedBusiness.Income.ToString();
-        Debug.Log("Income of Player's business has been changed.");
+        // Debug.Log("Income of Player's business has been changed.");
     }
 }

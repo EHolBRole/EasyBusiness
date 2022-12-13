@@ -8,6 +8,6 @@ public class ChoisedBusinessPopularity : AbstractTextUI
     {
         if (_textTMP.text != UsersBusinessManager.ChoisedBusiness.Popularity.ToString())
             _textTMP.text = UsersBusinessManager.ChoisedBusiness.Popularity.ToString();
-        Debug.Log("Popularity of Player's business has been changed.");
+        // Debug.Log("Popularity of Player's business has been changed.");
     }
 }

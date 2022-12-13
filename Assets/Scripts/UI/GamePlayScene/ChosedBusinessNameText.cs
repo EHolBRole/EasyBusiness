@@ -14,7 +14,7 @@ namespace UI
         {
             if (_textTMP.text != UsersBusinessManager.ChoisedBusiness.Name)
                 _textTMP.text = UsersBusinessManager.ChoisedBusiness.Name;
-            Debug.Log("Name of Player's business has been changed.");
+            // Debug.Log("Name of Player's business has been changed.");
         }
     }
 }

@@ -36,6 +36,7 @@ namespace Entities
             business.ChangeIncome(AddedIncome);
             business.ChangeOutlay(AddedOutlay);
             business.ChangePopularity(AddedPopularity);
+            this.Level++;
             Debug.Log("All parameter changes of the decision was applied!");
         } 
 

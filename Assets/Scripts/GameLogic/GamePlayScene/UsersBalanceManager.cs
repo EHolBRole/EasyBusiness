@@ -15,6 +15,8 @@ public class UsersBalanceManager : MonoBehaviour
     {
         _usersBalance += money;
 
+        Debug.Log(money);
+
         _usersBalanceTextUI.ChangeText();
 
         Debug.Log("Users balance has changed!");

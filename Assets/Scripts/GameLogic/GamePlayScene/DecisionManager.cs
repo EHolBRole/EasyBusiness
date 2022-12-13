@@ -4,14 +4,17 @@ using UI;
 using Libraries;
 public class DecisionManager : MonoBehaviour
 {
-    private static AbstractDecision _choosedDecision = new SimpleDecision("none", 0, 0, 0, 1000, Business.BusinessTier.BaseTier);
-
-    public static void DoDecision(Business business) // Put in Business
+    public static bool TryDoDecision(Business business) // Put in Business
     {
-        if (UsersBalanceManager.GetUsersBalance() > _choosedDecision.Cost)
+        if (UsersBalanceManager.GetUsersBalance() > DecisionLib.choosedDecision.Cost)
         {
-            UsersBalanceManager.AddUsersBalance((_choosedDecision.Cost) * -1);
-            _choosedDecision.ApplyDecision(business);
+            UsersBalanceManager.AddUsersBalance((DecisionLib.choosedDecision.Cost) * -1);
+            DecisionLib.choosedDecision.ApplyDecision(business);
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 }

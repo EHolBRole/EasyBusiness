@@ -8,6 +8,6 @@ public class ChosedBusinessOutlay : AbstractTextUI
     {
         if (_textTMP.text != UsersBusinessManager.ChoisedBusiness.Outlay.ToString())
             _textTMP.text = UsersBusinessManager.ChoisedBusiness.Outlay.ToString();
-        Debug.Log("Outlay of Player's business has been changed.");
+        // Debug.Log("Outlay of Player's business has been changed.");
     }
 }
