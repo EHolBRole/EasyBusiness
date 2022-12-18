@@ -12,8 +12,8 @@ public class UsersBalanceText : AbstractTextUI
 
     public override void ChangeText() // Think about realization. Totaly shouldn't be put in every Frame proceding. 
     {
-        _usersBalanceText.text = UsersBalanceManager.GetUsersBalance().ToString();
+        _usersBalanceText.text = "UsersBalanceManager.GetUsersBalance().ToString(): " + UsersBalanceManager.GetUsersBalance().ToString();
         Debug.Log("Users balance has been changed.");
-        Debug.Log(UsersBalanceManager.GetUsersBalance());
+        Debug.Log("UsersBalanceManager.GetUsersBalance(): " + UsersBalanceManager.GetUsersBalance());
     }
 }

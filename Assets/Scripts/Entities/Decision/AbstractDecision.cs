@@ -7,7 +7,7 @@ namespace Entities
     public abstract class AbstractDecision
     {
         public AbstractDecision(string name, int addedIncome, int addedOutlay, int addedPopularity, 
-            int cost, Business.BusinessTier decisionTier, int level = 0)
+            int cost, Business.BusinessTier decisionTier, int level = 0, int maxLevel = 5)
         {
             Name = name;
             AddedIncome = addedIncome;
@@ -16,6 +16,7 @@ namespace Entities
             Cost = cost;
             DecisionTier = decisionTier;
             Level = level;
+            MaxLevel = maxLevel;
         }
         public Business.BusinessTier DecisionTier { get; private set; }
 
@@ -30,9 +31,14 @@ namespace Entities
         public virtual int Cost { get; protected set; }
         
         public int Level { get; protected set; }
-        
+
+        public int MaxLevel { get; protected set; }
+
+
         public virtual void ApplyDecision(Business business)
         {
+            if(this.Level == -1) return;
+            
             business.ChangeIncome(AddedIncome);
             business.ChangeOutlay(AddedOutlay);
             business.ChangePopularity(AddedPopularity);
