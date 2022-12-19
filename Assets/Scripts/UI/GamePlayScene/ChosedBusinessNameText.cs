@@ -13,7 +13,7 @@ namespace UI
         public override void ChangeText() // Think about realization. Totaly shouldn't be put in every Frame proceding. 
         {
             if (_textTMP.text != UsersBusinessManager.ChoisedBusiness.Name)
-                _textTMP.text = "UsersBusinessManager.ChoisedBusiness.Name: " + UsersBusinessManager.ChoisedBusiness.Name;
+                _textTMP.text = UsersBusinessManager.ChoisedBusiness.Name;
             // Debug.Log("Name of Player's business has been changed.");
         }
     }

@@ -17,8 +17,10 @@ public class NextMonthButton : MonoBehaviour
     }
     public void OnClick()
     {
-        ChoiseDecisionPanelGO.SetActive(false);
-        monthManager.MoveToNextMonth();
-        GamePlayPanelGO.SetActive(true);
+        if(monthManager.TryMoveToNextMonth())
+        {
+            ChoiseDecisionPanelGO.SetActive(false);
+            GamePlayPanelGO.SetActive(true);
+        }
     }
 }

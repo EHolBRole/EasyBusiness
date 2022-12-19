@@ -9,9 +9,9 @@ namespace Entities
         
         private DecisionAction _uniqueDecisionAction;
         public UniqueDecision(string name, int addedIncome, int addedOutlay, int addedPopularity, int cost, 
-            DecisionAction uniqueDecisionAction, Business.BusinessTier decisionTier, 
+            DecisionAction uniqueDecisionAction, 
             int level = 0, bool isDecisionDone = false)
-        : base(name, addedIncome, addedOutlay, addedPopularity, cost, decisionTier, level)
+        : base(name, addedIncome, addedOutlay, addedPopularity, cost, level)
         {
             _uniqueDecisionAction = uniqueDecisionAction;
             IsDecisionDone = isDecisionDone;

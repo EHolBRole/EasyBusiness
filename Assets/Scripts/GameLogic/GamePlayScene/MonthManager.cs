@@ -3,7 +3,7 @@ using Entities;
 using Observers;
 public class MonthManager : MonoBehaviour
 {
-    private const int MONTH_LIMIT = 60;
+    private const int MONTH_LIMIT = 36;
 
     [SerializeField]
     private GameObject _monthNumTextGO;
@@ -28,7 +28,7 @@ public class MonthManager : MonoBehaviour
         _monthNumTextUI.ChangeText();
     }
 
-    public void MoveToNextMonth()
+    public bool TryMoveToNextMonth()
     {
         if (MonthCounter > MONTH_LIMIT)
         {
@@ -44,10 +44,12 @@ public class MonthManager : MonoBehaviour
             _monthNumTextUI.ChangeText();
             _businessTextPublisher.NotifyObservers();
             Debug.Log("New Month begins");
+            return true;
         }
         else
         {
-            Debug.Log("Sorry, you don't have enought money");
+            Debug.Log("Sorry, you can't apply this decision!");
+            return false;
         }
     }
 }

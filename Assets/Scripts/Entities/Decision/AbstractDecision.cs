@@ -6,19 +6,19 @@ namespace Entities
     // Add fabrics
     public abstract class AbstractDecision
     {
+
         public AbstractDecision(string name, int addedIncome, int addedOutlay, int addedPopularity, 
-            int cost, Business.BusinessTier decisionTier, int level = 0, int maxLevel = 5)
+            int cost, int level = 0, int maxLevel = 5)
         {
             Name = name;
             AddedIncome = addedIncome;
             AddedOutlay = addedOutlay;
             AddedPopularity = addedPopularity;
             Cost = cost;
-            DecisionTier = decisionTier;
             Level = level;
             MaxLevel = maxLevel;
         }
-        public Business.BusinessTier DecisionTier { get; private set; }
+      
 
         public string Name { get; private set; }
         

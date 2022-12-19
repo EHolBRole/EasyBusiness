@@ -7,11 +7,8 @@ namespace Entities
     {
         private List<AbstractDecision> _avaiableDecisionsList = new List<AbstractDecision>();
 
-        public List<Business> nextTierBusinessList = new List<Business>(); // Restruct All System with Business and it's Tiers. Need to make better Architecture
-        // Maybe it's good decision to use Abstract Fabric pattern here. Need to think of it.
-
         public Business(string name, int income, int outlay, int popularity, 
-            int startBalance, Sprite businessSprite, BusinessTier tier, List<Business> businesses, List<AbstractDecision> abstractDecisionsList) 
+            int startBalance, Sprite businessSprite, List<AbstractDecision> abstractDecisionsList) 
         {
             Name = name;
             Income = income;
@@ -19,8 +16,6 @@ namespace Entities
             Popularity = popularity;
             StartBalance = startBalance;
             BusinessSprite = businessSprite;
-            Tier = tier;
-            nextTierBusinessList.AddRange(businesses);
             _avaiableDecisionsList.AddRange(abstractDecisionsList);
         }
 
@@ -33,9 +28,7 @@ namespace Entities
         public int Popularity { get; private set; }
         
         public int StartBalance { get; private set; }
-        
-        public BusinessTier Tier { get; private set; }
-        
+
         public Sprite BusinessSprite { get; private set; }
 
         public string ShowAllAvaiableDecisions()
@@ -90,14 +83,6 @@ namespace Entities
                 $"Your income: {Income} \n" +
                 $"Your outlay: {Outlay} \n" +
                 $"Your popularity: {Popularity} \n";
-        }
-
-        public enum BusinessTier
-        {
-            BaseTier,
-            FirstTier,
-            SecondTier,
-            ThirdTier
         }
     }
 }
